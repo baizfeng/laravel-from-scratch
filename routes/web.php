@@ -15,7 +15,10 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::view('contact', 'contact');
+Route::get('contact', 'ContactFormController@create');
+Route::post('contact', 'ContactFormController@store');
+
+//Route::view('contact', 'contact');
 
 Route::get('about', function () {
     return view('about');

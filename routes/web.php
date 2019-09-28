@@ -15,14 +15,12 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('contact', 'ContactFormController@create');
-Route::post('contact', 'ContactFormController@store');
+Route::get('contact-us', 'ContactFormController@create')->name('contact.create');
+Route::post('contact-us', 'ContactFormController@store')->name('contact.store');
 
 //Route::view('contact', 'contact');
 
-Route::get('about', function () {
-    return view('about');
-});
+Route::view('about', 'about')->middleware('test');
 
 //Route::get('customers', 'CustomersController@index');
 //Route::get('customers/create', 'CustomersController@create');

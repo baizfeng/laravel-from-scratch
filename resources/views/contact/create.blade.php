@@ -1,4 +1,4 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('title','Contact Us')
 
@@ -6,7 +6,7 @@
     <h1>Contact me</h1>
 
     @if( ! session()->has('message'))
-        <form action="/contact" method="post">
+        <form action="{{ route('contact.store') }}" method="post">
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" class="form-control" name="name" value="{{ old('name') }}">
